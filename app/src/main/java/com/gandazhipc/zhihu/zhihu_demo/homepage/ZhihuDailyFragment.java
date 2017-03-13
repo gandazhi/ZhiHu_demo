@@ -17,6 +17,12 @@ import java.util.ArrayList;
 
 public class ZhihuDailyFragment extends Fragment implements ZhihuDailyContact.View{
 
+    public ZhihuDailyFragment(){}
+
+    public static ZhihuDailyFragment newInstance(){
+        return new ZhihuDailyFragment();
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
