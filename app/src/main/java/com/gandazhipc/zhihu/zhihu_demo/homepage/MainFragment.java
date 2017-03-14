@@ -17,6 +17,8 @@ import android.view.ViewGroup;
 import com.gandazhipc.zhihu.zhihu_demo.R;
 import com.gandazhipc.zhihu.zhihu_demo.adapter.MainPagerAdapter;
 
+import java.util.Random;
+
 /**
  * Created by gandazhi on 17-3-12.
  */
@@ -75,9 +77,15 @@ public class MainFragment extends Fragment {
         initView(view);
 
         //显示菜单
+        setHasOptionsMenu(true);
+
+        //......tab layout hidden fab
+
 
         return view;
     }
+
+
 
     private void initView(View view) {
         tabLayout = ((TabLayout) view.findViewById(R.id.tab_layout));
@@ -97,16 +105,46 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.main,menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
+
+        int id = item.getItemId();
+
+        if (id == R.id.action_fell_lucky){
+            fellLucky();
+        }
+        return true;
+
+    }
+
+    private void fellLucky() {
+        Random random = new Random();
+        int type = random.nextInt(3);
+        switch (type){
+            //zhihu
+            case 0:
+                zhihuDailyPresenter.feelLucky();
+                break;
+            //guoke
+            case 1:
+                break;
+            //douban
+            default:
+                break;
+        }
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        FragmentManager manger = getChildFragmentManager();
+        manger.putFragment(outState,"zhihu",zhihuDailyFragment);
+        //guoke
+
+        //douban
     }
 
     public MainPagerAdapter getAdapter() {
