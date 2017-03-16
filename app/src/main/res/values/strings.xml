@@ -2,4 +2,5 @@
     <string name="app_name">ZhiHu_demo</string>
     <string name="fell_lucky">随便看看</string>
     <string name="zhihu_daily">知乎日报</string>
+    <string name="search_bookmarks">搜索收藏</string>
 </resources>

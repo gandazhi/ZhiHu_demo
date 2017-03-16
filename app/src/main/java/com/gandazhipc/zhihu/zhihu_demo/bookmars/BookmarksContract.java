@@ -12,9 +12,9 @@ import java.util.ArrayList;
  * Created by gandazhi on 17-3-14.
  */
 
-public class BookmarsContract {
+public class BookmarksContract {
 
-    interface View extends BaseView<ZhihuDailyContact.Presenter>{
+    interface View extends BaseView<BookmarksContract.Presenter>{
 
         //douban guoke haven't written
         void showResults (ArrayList<ZhihuDailyNews.Question> zhihuList,
