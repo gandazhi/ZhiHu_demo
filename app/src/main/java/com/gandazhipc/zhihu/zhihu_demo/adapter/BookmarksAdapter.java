@@ -22,7 +22,7 @@ import java.util.List;
  * Created by gandazhi on 17-3-14.
  */
 
-public class BookmarsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class BookmarksAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final Context context;
     private final LayoutInflater inflater;
@@ -47,8 +47,8 @@ public class BookmarsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
 
     //guoke douban haven't written
-    public BookmarsAdapter(Context context, ArrayList<ZhihuDailyNews.Question> zhihulist,
-                           ArrayList<Integer> types){
+    public BookmarksAdapter(Context context, ArrayList<ZhihuDailyNews.Question> zhihulist,
+                            ArrayList<Integer> types){
         this.context = context;
         this.inflater = LayoutInflater.from(context);
 

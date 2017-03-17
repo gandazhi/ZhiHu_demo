@@ -14,9 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gandazhipc.zhihu.zhihu_demo.R;
-import com.gandazhipc.zhihu.zhihu_demo.adapter.BookmarsAdapter;
+import com.gandazhipc.zhihu.zhihu_demo.adapter.BookmarksAdapter;
 import com.gandazhipc.zhihu.zhihu_demo.bean.ZhihuDailyNews;
-import com.gandazhipc.zhihu.zhihu_demo.homepage.ZhihuDailyContact;
 
 import java.util.ArrayList;
 
@@ -28,7 +27,7 @@ public class BookmarksFragment extends Fragment implements BookmarksContract.Vie
 
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refreshLayout;
-    private BookmarsAdapter adapter;
+    private BookmarksAdapter adapter;
     private BookmarksContract.Presenter presenter;
 
     public BookmarksFragment(){}

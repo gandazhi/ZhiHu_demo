@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.SearchView;
 
 import com.gandazhipc.zhihu.zhihu_demo.R;
-import com.gandazhipc.zhihu.zhihu_demo.adapter.BookmarsAdapter;
+import com.gandazhipc.zhihu.zhihu_demo.adapter.BookmarksAdapter;
 import com.gandazhipc.zhihu.zhihu_demo.bean.BeanType;
 import com.gandazhipc.zhihu.zhihu_demo.bean.ZhihuDailyNews;
 import com.gandazhipc.zhihu.zhihu_demo.interfaze.OnRecyclerViewOnClickListener;
@@ -32,7 +32,7 @@ public class SearchFragment extends Fragment implements SearchContract.View{
     private RecyclerView recyclerView;
     private ContentLoadingProgressBar progressBar;
 
-    private BookmarsAdapter adapter;
+    private BookmarksAdapter adapter;
 
     public static SearchFragment newInstance(){
         return new SearchFragment();
@@ -93,12 +93,12 @@ public class SearchFragment extends Fragment implements SearchContract.View{
     @Override
     public void showResults(ArrayList<ZhihuDailyNews.Question> zhihuList, ArrayList<Integer> types) {
         if (adapter == null){
-            adapter = new BookmarsAdapter(getActivity(),zhihuList,types);
+            adapter = new BookmarksAdapter(getActivity(),zhihuList,types);
             adapter.setItemListener(new OnRecyclerViewOnClickListener() {
                 @Override
                 public void OnItemClick(View v, int position) {
                     int type = recyclerView.findViewHolderForAdapterPosition(position).getItemViewType();
-                    if (type == BookmarsAdapter.TYPE_ZHIHU_NORMAL){
+                    if (type == BookmarksAdapter.TYPE_ZHIHU_NORMAL){
                         presenter.startReading(BeanType.TYPE_ZHIHU,position);
                     }
                 }
